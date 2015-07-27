@@ -1,0 +1,4 @@
+services:
+#    odiseo_notification.example:
+#        class: Odiseo\Bundle\NotificationBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
