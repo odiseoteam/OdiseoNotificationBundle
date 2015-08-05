@@ -2,8 +2,10 @@
 
 namespace Odiseo\Bundle\NotificationBundle\DependencyInjection;
 
+use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -20,10 +22,24 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('odiseo_notification');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('driver')->defaultValue(SyliusResourceBundle::DRIVER_DOCTRINE_ORM)->end()
+            ->end()
+        ;
+        $this->addClassesSection($rootNode);
 
         return $treeBuilder;
+    }
+
+    /**
+     * Adds `classes` section.
+     *
+     * @param ArrayNodeDefinition $node
+     */
+    private function addClassesSection(ArrayNodeDefinition $node)
+    {
+    	//if not model
+    	return;
     }
 }
