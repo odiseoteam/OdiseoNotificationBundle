@@ -17,7 +17,6 @@ class OdiseoNotificationBundle extends AbstractResourceBundle
 		);
 	}
 
-
 	protected function getModelNamespace()
 	{
 		return 'Odiseo\Bundle\NotificationBundle\Model';

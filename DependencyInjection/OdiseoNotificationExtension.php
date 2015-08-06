@@ -20,7 +20,7 @@ class OdiseoNotificationExtension extends AbstractResourceExtension
     /**
      * {@inheritdoc}
      */
-	protected $applicationName = 'odiseo';
+	protected $applicationName = 'odiseo_notification';
 	protected $configFormat = self::CONFIG_YAML;
 	
 	public function load(array $config, ContainerBuilder $container)
