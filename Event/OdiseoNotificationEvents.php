@@ -1,7 +1,8 @@
 <?php
+
 namespace Odiseo\Bundle\NotificationBundle\Event;
 
-final class Odiseo																																																																																				NotificationEvents
+final class OdiseoNotificationEvents
 {
 	const NOTIFICATION_CREATE = 'odiseo_notification.notification.create';
 }
