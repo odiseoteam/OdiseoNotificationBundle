@@ -1,0 +1,8 @@
+parameters:
+    odiseo_notification.controller.notification.class: Odiseo\Bundle\NotificationBundle\Controller\NotificationController
+
+services:
+    odiseo_notification.controller.notification:
+        class: %odiseo_notification.controller.notification.class%
+        calls:
+            - [ 'setContainer', ['@service_container'] ]

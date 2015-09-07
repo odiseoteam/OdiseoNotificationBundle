@@ -1,4 +1,4 @@
 services:
-#    odiseo_notification.example:
-#        class: Odiseo\Bundle\NotificationBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    odiseo_notification.builder.notification:
+        class: Odiseo\Bundle\NotificationBundle\Builder\NotificationBuilder
+        arguments: [ '@odiseo_notification.repository.notification', '@odiseo_notification.manager.notification', '@security.token_storage' ]

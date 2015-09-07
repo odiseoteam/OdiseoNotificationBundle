@@ -39,7 +39,21 @@ class Configuration implements ConfigurationInterface
      */
     private function addClassesSection(ArrayNodeDefinition $node)
     {
-    	//if not model
-    	return;
+        $node
+            ->children()
+                ->arrayNode('classes')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->arrayNode('notification')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('model')->defaultValue('Odiseo\Bundle\NotificationBundle\Model\Notification')->end()
+                                ->scalarNode('repository')->defaultValue('Odiseo\Bundle\NotificationBundle\Doctrine\ORM\NotificationRepository')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
     }
 }

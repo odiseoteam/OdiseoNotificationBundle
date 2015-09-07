@@ -22,6 +22,10 @@ class OdiseoNotificationExtension extends AbstractResourceExtension
      */
 	protected $applicationName = 'odiseo_notification';
 	protected $configFormat = self::CONFIG_YAML;
+    protected $configFiles  = array(
+        'controllers',
+        'services'
+    );
 	
 	public function load(array $config, ContainerBuilder $container)
 	{

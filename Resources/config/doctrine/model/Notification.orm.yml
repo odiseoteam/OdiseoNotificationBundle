@@ -1,0 +1,38 @@
+Odiseo\Bundle\NotificationBundle\Model\Notification:
+    type: mappedSuperclass
+    table: odiseo_notification
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        message:
+            column: message
+            type: text
+        link:
+            column: link
+            type: string
+            nullable: true
+        type:
+            column: type
+            type: string
+        isRead:
+            column: is_read
+            type: boolean
+            options:
+                default: 0
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+    manyToOne:
+        owner:
+            targetEntity: \Odiseo\Bundle\UserBundle\Model\UserInterface
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id
+                onDelete: 'CASCADE'

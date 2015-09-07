@@ -13,12 +13,18 @@ class OdiseoNotificationBundle extends AbstractResourceBundle
 	public static function getSupportedDrivers()
 	{
 		return array(
-				SyliusResourceBundle::DRIVER_DOCTRINE_ORM,
+			SyliusResourceBundle::DRIVER_DOCTRINE_ORM,
 		);
 	}
 
-	/*protected function getModelNamespace()
+	protected function getModelInterfaces()
+	{
+		return array(
+			'Odiseo\Bundle\NotificationBundle\Model\NotificationInterface' => 'odiseo_notification.model.notification.class',
+		);
+	}
+	protected function getModelNamespace()
 	{
 		return 'Odiseo\Bundle\NotificationBundle\Model';
-	}*/
+	}
 }

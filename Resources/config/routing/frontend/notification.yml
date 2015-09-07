@@ -1,0 +1,7 @@
+odiseo_notification_index:
+    path:     /
+    defaults: { _controller: "odiseo_notification.controller.notification:indexAction" }
+
+odiseo_notification_mark_as_read:
+    path:     /mark-as-read
+    defaults: { _controller: "odiseo_notification.controller.notification:markAsReadAction" }

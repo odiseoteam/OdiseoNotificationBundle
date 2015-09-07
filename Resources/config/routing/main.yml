@@ -1,0 +1,3 @@
+odiseo_notification:
+    resource: "@OdiseoNotificationBundle/Resources/config/routing/frontend/notification.yml"
+    prefix:   /notification
