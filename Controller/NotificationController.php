@@ -27,6 +27,13 @@ class NotificationController extends Controller
         if($type = $request->get('type'))
         {
             $this->get('odiseo_notification.repository.notification')->markAsReadByOwnerAndTypes($this->getUser(), array($type));
+            $manager = $this->get('odiseo_messaging.service.thread_message');
+            $user = $this->getUser();
+            $threads = $manager->findParticipantInboxThreads($user);
+            foreach($threads as $thread){
+                $manager->markAsReadByParticipant($thread,$user);
+            }
+
         }
 
         $referer = $request->headers->get('referer');
